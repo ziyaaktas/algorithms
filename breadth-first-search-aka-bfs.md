@@ -40,7 +40,11 @@ Possible graph for this:
 
 As in the examples above, the given input should be able to be transformed to a graph to solve with BFS approach.
 
-Let's say with the representation above, we want to go from d to e the fastest way.
+A binary tree can be also traversed with BFS
+
+![](.gitbook/assets/dfs_bfs2.png)
+
+Let's say with the representation above, we want to go from d to e the shortest way.
 
 Basic structure of a  BFS algorithm
 
@@ -52,7 +56,9 @@ while (queue.length > 0) {
     const size = queue.length;
     for (let i = 0; i < size; i++) {
         // iteration will vary depending on the problem
-        // we want to iterate through the given point's neighbors
+        // usually some logic to check current value against the goal
+        // if the goal is not met, then add the current node's neighbors to 
+        // the queue
     }
 }
 ```
