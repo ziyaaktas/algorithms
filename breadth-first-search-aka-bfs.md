@@ -63,3 +63,30 @@ while (queue.length > 0) {
 }
 ```
 
+```javascript
+// Also keeps track of visited nodes
+function BFS(root, target) {
+    const queue = []
+    const visited = new Set()
+    let step = 0
+    queue.push(root)
+    visited.add(root)
+    while(queue.length) {
+        step += 1
+        const size = queue.length
+        for(let i = 0; i < size; i++) {
+            const cur = queue.shift()
+            if(cur === target) return step
+            const neigbors = // of cur, implementation can vary
+            for(let next of neighbors) {
+                if(!visited.has(next)) {
+                    queue.push(next)
+                    visited.add(next)
+                }
+            }
+        }
+    }
+    return -1
+}
+```
+
