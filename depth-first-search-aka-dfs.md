@@ -24,12 +24,10 @@ function DFS(cur, target, visited) {
 function DFS(root, target) {    
     const visited = new Set()
     const stack = []
-    const result = []
     stack.push(root)
     while(stack.length) {
         const cur = stack.pop()  // Dfs uses stacks as opposed to queues in Bfs
-        result.push(cur)
-        if(cur === target) return [result, true]
+        if(cur === target) return true
         const neighbours = // of cur, this implementation can vary
         for(let next of neighbours) {
             if(!visited.has(next) {
@@ -38,7 +36,7 @@ function DFS(root, target) {
             }
         }
     }
-    return [result, false]
+    return false
 }
 ```
 

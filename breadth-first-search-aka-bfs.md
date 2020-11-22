@@ -71,12 +71,14 @@ function BFS(root, target) {
     let step = 0
     queue.push(root)
     visited.add(root)
+    const result = []
     while(queue.length) {
         step += 1
         const size = queue.length
         for(let i = 0; i < size; i++) {
             const cur = queue.shift()
-            if(cur === target) return step
+            result.push(cur)
+            if(cur === target) return [result, step]
             const neigbors = // of cur, implementation can vary
             for(let next of neighbors) {
                 if(!visited.has(next)) {
@@ -86,7 +88,7 @@ function BFS(root, target) {
             }
         }
     }
-    return -1
+    return [result, -1]
 }
 ```
 
